@@ -5,3 +5,6 @@ settings your_bot Erik
 settings your_botid 1
 settings field_columns 7
 settings field_rows 6
+update game round 2
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0
+action move 10000

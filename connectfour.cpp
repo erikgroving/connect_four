@@ -1,43 +1,36 @@
 #include "connectfour.h"
 
-
-using namespace std;
-
-
-int main() {
-    string setting, var_val;
-    string  p1, p2;
-    string  my_bot;
-    int     timebank;
-    int     time_per_move;
-    int     my_bot_id;
-    int     cols;
-    int     rows = -1;
-
-
-    getSettings (p1, p2, my_bot, timebank, time_per_move,
-            my_bot_id, cols, rows);
-
-    gameOn(rows, cols);
-
-    return 0;
-}
-
-
 void gameOn(int rows, int cols) {
-    bool    game = true;
-    int     round_name;
-    int*    board;
+    bool            game = true;
+    int             round;
+    vector<int>     board(rows*cols);
     
-    board = new int[rows * cols];
     // Initialize an empty board
     for (int i = 0; i < rows * cols; i++) {
         board[i] = 0;
     }
-    cout << rows * cols << endl;
     while (game) {
+        // Get the round number
+        getRoundNum(round);
+        // Get the current status of the board
+        
+        // Get the amount of time you have
         game = false;
     }
+}
+
+void getRoundNum (int& round) {
+    string line;
+    do {
+        getline(cin, line);
+        istringstream info(line);
+        for (int i = 0; i < 2; i++) {
+            info.ignore(20, ' ');
+        }
+        info >> line >> round;
+    } while (line != "round");
+    cout << line <<"num was " << round << endl;
+    return;
 }
 
 void getSettings (string& p1, string& p2, string& my_bot, 
