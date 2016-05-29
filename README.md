@@ -1,1 +1,1 @@
-# connect_four
+# Connect Four #This is a repo for my connect four bot at aigames.com
