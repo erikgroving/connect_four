@@ -1,0 +1,7 @@
+settings timebank 10000
+settings time_per_move 500
+settings player_name Erik,Bot
+settings your_bot Erik
+settings your_botid 1
+settings field_columns 7
+settings field_rows 6
