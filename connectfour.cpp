@@ -23,7 +23,7 @@ void gameOn(int player, int rows, int cols) {
 
         if (u_or_a == "action") {
             info >> this_move >> time;
-            //printBoard(board, rows, cols);
+            
             pickMove (board, rows, cols, time);
         }
         else if (u_or_a == "update") {
@@ -70,10 +70,10 @@ void pickMove (vector<spot> board, int rows, int cols, int time) {
         
         int score = getMoveScore(board, rows, cols, i);
         
-        if (opponentWouldWin(board, rows, cols, i)) {
+        if (opponentWouldWin(board, rows, cols, i) && score != 1000) {
             score = -10000000 + i;
         }
-
+        
         if (score > best_move.score) {
             best_move.score = score;
             best_move.col = i;
@@ -104,7 +104,6 @@ bool opponentCanWin (vector<spot> board, int rows, int cols) {
     }
     return false;
 }
-
 
 int getMoveScore (vector<spot> board, int rows, int cols, int move) {
     // Determine the position this move would end up at
