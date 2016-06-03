@@ -24,6 +24,7 @@ int getMoveScore (vector<spot>, int, int, int);
 int getChain (vector<spot>, int, int, int, int, int, spot);
 bool openHorizontal (vector<spot>, int, int, int&, spot);
 bool opponentWouldWin (vector<spot>, int, int, int);
+bool opponentCanWin (vector<spot>, int, int);
 
 int getIdx(int, int, int);
 void printBoard (vector<spot>, int, int);

@@ -23,12 +23,12 @@ void gameOn(int player, int rows, int cols) {
 
         if (u_or_a == "action") {
             info >> this_move >> time;
+            //printBoard(board, rows, cols);
             pickMove (board, rows, cols, time);
         }
         else if (u_or_a == "update") {
             getUpdate (line, round, board, player);
-//            printBoard(board, rows, cols);
-//            cout << endl << endl;
+            //printBoard(board, rows, cols);
         }
     }
 }
@@ -73,6 +73,7 @@ void pickMove (vector<spot> board, int rows, int cols, int time) {
         if (opponentWouldWin(board, rows, cols, i)) {
             score = -10000000 + i;
         }
+
         if (score > best_move.score) {
             best_move.score = score;
             best_move.col = i;
@@ -92,6 +93,16 @@ void pickMove (vector<spot> board, int rows, int cols, int time) {
     }
 
     cout << "place_disc " << best_move.col << endl << flush;
+}
+
+bool opponentCanWin (vector<spot> board, int rows, int cols) {
+    for (int i = 0; i < cols; i++) {
+        int score = getMoveScore (board, rows, cols, i);
+        if (score == 100 || score == 1000) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -183,29 +194,30 @@ bool opponentWouldWin (vector<spot> board, int rows, int cols, int move) {
     for (int i = 0; i < rows * cols; i++) {
         tmp_board[i] = board[i];
     }
-    
+   
+
     // Place the move
     tmp_board[getIdx(row_pos, move, cols)] = MINE;
+    //printBoard(tmp_board, rows, cols);
     
-    int best_opp_move;
-    for (int i = 0; i < cols; i++) {
-        int row_pos = -1;
-        for (int j = rows - 1; j >= 0; j--) {
-            if ( board[getIdx(j, i, cols)] == OPEN ) {
-                row_pos = j;
-                break;
-            }
-        }
-
-        if (row_pos == -1) {
-            continue;
-        }
-        
-        int score = getMoveScore(board, rows, cols, i);
-        if (score == 100) {
-            return true;
+    row_pos = -1;
+    
+    for (int j = rows - 1; j >= 0; j--) {
+        if ( tmp_board[getIdx(j, move, cols)] == OPEN ) {
+            row_pos = j;
+            break;
         }
     }
+
+    if (row_pos == -1) {
+        return false;
+    }
+    
+    int score = getMoveScore(tmp_board, rows, cols, move);
+    if (score == 100) {
+        return true;
+    }
+    
     return false;    
 }
 
@@ -372,7 +384,7 @@ void getUpdate (string in, int& round, vector<spot>& board, int player) {
             board[pos] = (spot)(row_str[0] - 48);
             while (idx != string::npos) {
                 board[++pos] = (spot)(row_str[idx + 1] - 48);
-                idx = row_str.find_first_of(",;", idx + 1); 
+                idx = row_str.find_first_of(",;", idx + 1);
             }
         }
     }
