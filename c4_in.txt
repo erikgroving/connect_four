@@ -1,10 +1,97 @@
 settings timebank 10000
+
 settings time_per_move 500
-settings player_name Erik,Bot
-settings your_bot Erik
+
+settings player_names player1,player2
+
+settings your_bot player1
+
 settings your_botid 1
+
 settings field_columns 7
+
 settings field_rows 6
-update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,2,0;0,0,2,0,0,1,2;0,0,2,0,1,1,2;0,1,2,0,1,1,2
+
+Round 1
+
 update game round 1
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0
+
 action move 10000
+
+Output from your bot: "place_disc 3"
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,1,0,0,0
+
+Round 2
+
+update game round 3
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,2,0,0,0;0,0,0,1,0,0,0
+
+action move 10000
+
+Output from your bot: "place_disc 2"
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,2,0,0,0;0,0,1,1,0,0,0
+
+Round 3
+
+update game round 5
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,2,0,0,0;0,0,0,2,0,0,0;0,0,1,1,0,0,0
+
+action move 10000
+
+Output from your bot: "place_disc 2"
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,2,0,0,0;0,0,1,2,0,0,0;0,0,1,1,0,0,0
+
+Round 4
+
+update game round 7
+
+update game field 0,0,0,0,0,0,0;0,0,0,0,0,0,0;0,0,0,2,0,0,0;0,0,0,2,0,0,0;0,0,1,2,0,0,0;0,0,1,1,0,0,0
+
+action move 10000
+
+Output from your bot: "place_disc 3"
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,0,2,0,0,0;0,0,0,2,0,0,0;0,0,1,2,0,0,0;0,0,1,1,0,0,0
+
+Round 5
+
+update game round 9
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,0,2,0,0,0;0,0,2,2,0,0,0;0,0,1,2,0,0,0;0,0,1,1,0,0,0
+
+action move 10000
+
+Output from your bot: "place_disc 2"
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,1,2,0,0,0;0,0,2,2,0,0,0;0,0,1,2,0,0,0;0,0,1,1,0,0,0
+
+Round 6
+
+update game round 11
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,1,2,0,0,0;0,0,2,2,0,0,0;0,0,1,2,0,0,0;2,0,1,1,0,0,0
+
+action move 10000
+
+Output from your bot: "place_disc 4"
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,1,2,0,0,0;0,0,2,2,0,0,0;0,0,1,2,0,0,0;2,0,1,1,1,0,0
+
+Round 7
+
+update game round 13
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,1,2,0,0,0;0,0,2,2,0,0,0;0,0,1,2,0,0,0;2,2,1,1,1,0,0
+
+action move 10000
+
+Output from your bot: "place_disc 5"
+
+update game field 0,0,0,0,0,0,0;0,0,0,1,0,0,0;0,0,1,2,0,0,0;0,0,2,2,0,0,0;0,0,1,2,0,0,0;2,2,1,1,1,1,0
